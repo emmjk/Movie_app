@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cordinator"
+    android:fitsSystemWindows="true"
+    android:background="@color/background">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="328dp"
+        android:id="@+id/app_bar"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/collapsingToolbar"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginStart="40dp"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/cover"
+                    app:layout_collapseMode="pin"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shapes">
+
+                </View>
+
+                <TextView
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/release_date"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/release_date"
+                    style="@style/AlertDialog.AppCompat.Light"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:paddingLeft="16dp"
+                    />
+                <TextView
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/movie_title"
+                    android:textColor="@color/white"
+                    android:layout_above="@id/release_date"
+                    style="@style/AlertDialog.AppCompat.Light"
+                    android:textSize="42sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="16dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle"
+                    android:id="@+id/ratings"
+                    android:textSize="42sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"/>
+
+
+
+            </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/toolbar"
+                android:elevation="7dp">
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ProgressBar
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        android:id="@+id/progress"/>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/nestedScrollView"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/overview"
+                        android:textSize="18dp"
+                        style="@style/Theme.AppCompat"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/overview"
+                        android:fontFamily="sans-serif"
+                        style="@style/AlertDialog.AppCompat"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+
